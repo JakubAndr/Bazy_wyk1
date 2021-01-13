@@ -1,0 +1,12 @@
+SELECT MAX(cena1) AS najdrozsza_pizza FROM Pizza;
+SELECT COUNT(data_zamowienia) AS zamowione_w_2021 FROM Zamowienie WHERE data_zamowienia>='2021-01-01';
+SELECT COUNT(status_zamowienia) AS zamowienia_zrealizowane FROM Zamowienie WHERE status_zamowienia='zrealizowane';
+SELECT koszt AS Zamowienia_powyzej_50 FROM Zamowienie WHERE koszt >='50';
+SELECT SUM(koszt) AS zarobek FROM Zamowienie;
+SELECT AVG(koszt) FROM Zamowienie;
+SELECT Adres.ulica, Adres.nr_domu, Adres.nr_mieszkania, Adres.miejscowosc, Klienci.Nazwisko, Klienci.imie FROM Adres JOIN Klienci ON Adres.id_adresu=Klienci.id_klienta;
+SELECT Dostawa.paragon, Zamowienie.koszt ,Zamowienie.status_zamowienia FROM Zamowienie JOIN Dostawa ON Dostawa.id_dostawa=Zamowienie.id_zamowienia;
+SELECT COUNT(miejscowosc) FROM Adres WHERE kod_pocztowy='06-520';
+SELECT  telefon FROM Klienci WHERE telefon LIKE '5%';
+SELECT nazwa_pizzy AS nazwa_pizzy_alfabetycznie FROM Pizza ORDER BY nazwa_pizzy;
+SELECT * FROM Adres HAVING nr_domu>0 ORDER BY ulica;
